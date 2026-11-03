@@ -1,4 +1,4 @@
-# herdr-keybars
+# keybars-herdr
 
 A herdr plugin (bash) that puts workspaces on the keyboard through keybars
 Pro: agent state on number keys, each workspace's pull request, and Focus as
@@ -28,4 +28,4 @@ mind while working here.
 
 - `keybars-pro`: the app and the `keybars-pro` command this drives. A change
   to its CLI or alert events can break this plugin.
-- `keybars.nvim`: the Neovim plugin, which drives keybars Pro the same way.
+- `keybars-nvim`: the Neovim plugin, which drives keybars Pro the same way.

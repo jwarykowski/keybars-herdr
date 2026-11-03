@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# herdr-keybars setup: installs the marketplace's GitHub rule packs in
+# keybars-herdr setup: installs the marketplace's GitHub rule packs in
 # keybars Pro, which play what bin/github sends: github-ci-pack (the top row
 # chases while CI runs, Escape red until it passes), review-nudges (the
 # top-right key for reviews) and merge-confetti. Run it again after updating;
@@ -18,7 +18,7 @@ say() {
 }
 
 if ! have_keybars; then
-  say "herdr-keybars needs keybars Pro's keybars-pro command: App settings, Install the command-line tool"
+  say "keybars-herdr needs keybars Pro's keybars-pro command: App settings, Install the command-line tool"
   exit 1
 fi
 installed=0
@@ -26,7 +26,7 @@ for p in "${packs[@]}"; do
   "$kp" market install "$p" >/dev/null 2>&1 && installed=$((installed + 1))
 done
 if ((installed == ${#packs[@]})); then
-  say "herdr-keybars: GitHub rule packs installed"
+  say "keybars-herdr: GitHub rule packs installed"
 else
-  say "herdr-keybars: $installed of ${#packs[@]} rule packs installed (is keybars Pro running?)"
+  say "keybars-herdr: $installed of ${#packs[@]} rule packs installed (is keybars Pro running?)"
 fi

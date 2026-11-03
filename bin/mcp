@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# herdr-keybars mcp: gives your agents keybars Pro as tools of their own
+# keybars-herdr mcp: gives your agents keybars Pro as tools of their own
 # (keybars-pro mcp), so one can light a key itself: "tests pass, ready for
 # review". Claude Code is set up here, for every project; other agents take
 # the same command in their MCP settings (keybars.app/pro/cli/#mcp).
@@ -16,7 +16,7 @@ say() {
 }
 
 if ! have_keybars; then
-  say "herdr-keybars needs keybars Pro's keybars-pro command: App settings, Install the command-line tool"
+  say "keybars-herdr needs keybars Pro's keybars-pro command: App settings, Install the command-line tool"
   exit 1
 fi
 if ! command -v "$claude" >/dev/null 2>&1; then

@@ -1,5 +1,5 @@
 # shellcheck shell=bash
-# herdr-keybars' shared shell, sourced by each script in bin/: herdr's and
+# keybars-herdr' shared shell, sourced by each script in bin/: herdr's and
 # keybars Pro's commands, the plugin's folders and settings, starting and
 # stopping a background process, and herdr's sidebar tokens.
 
@@ -9,8 +9,8 @@ PATH="$PATH:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin"
 
 herdr="${HERDR_BIN_PATH:-herdr}"
 kp="${HERDR_KEYBARS_COMMAND:-keybars-pro}"
-state_dir="${HERDR_PLUGIN_STATE_DIR:-${XDG_STATE_HOME:-$HOME/.local/state}/herdr-keybars}"
-config_dir="${HERDR_PLUGIN_CONFIG_DIR:-${XDG_CONFIG_HOME:-$HOME/.config}/herdr-keybars}"
+state_dir="${HERDR_PLUGIN_STATE_DIR:-${XDG_STATE_HOME:-$HOME/.local/state}/keybars-herdr}"
+config_dir="${HERDR_PLUGIN_CONFIG_DIR:-${XDG_CONFIG_HOME:-$HOME/.config}/keybars-herdr}"
 
 # load_config reads config.env over the defaults the script has set
 load_config() {
@@ -71,10 +71,10 @@ halt() {
 token() {
   local id=$1 name=$2 value=$3 ttl=$4
   if [[ -n $value ]]; then
-    "$herdr" workspace report-metadata "$id" --source herdr-keybars --ttl-ms "$ttl" \
+    "$herdr" workspace report-metadata "$id" --source keybars-herdr --ttl-ms "$ttl" \
       --token "$name=$value" >/dev/null 2>&1
   else
-    "$herdr" workspace report-metadata "$id" --source herdr-keybars --clear-token "$name" >/dev/null 2>&1
+    "$herdr" workspace report-metadata "$id" --source keybars-herdr --clear-token "$name" >/dev/null 2>&1
   fi
 }
 
