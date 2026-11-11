@@ -42,7 +42,7 @@ once() { "$root/bin/github" once; }
 pr OPEN running
 once
 check test ! -s "$tmp/kp.log" # the first sight is only recorded
-check grep -qF "workspace report-metadata w1 --source herdr-keybars --ttl-ms 180000 --token gh=#412│•" "$tmp/herdr.log"
+check grep -qF "workspace report-metadata w1 --source keybars-herdr --ttl-ms 180000 --token gh=#412│•" "$tmp/herdr.log"
 
 pr OPEN FAILURE CHANGES_REQUESTED
 once

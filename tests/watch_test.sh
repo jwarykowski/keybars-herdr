@@ -84,11 +84,11 @@ expect "clear r1c3"
 # the Focus timer reaches the sidebar as $focus, and goes when it stops
 echo '{"phase":"work","remaining":700}' >"$tmp/focus.json"
 settle
-grep -qF -- "workspace report-metadata w1 --source herdr-keybars --ttl-ms 90000 --token focus=🎯12m" "$tmp/herdr.log" ||
+grep -qF -- "workspace report-metadata w1 --source keybars-herdr --ttl-ms 90000 --token focus=🎯12m" "$tmp/herdr.log" ||
   { echo "FAIL: no focus token" >&2; fail=1; }
 echo '{"phase":""}' >"$tmp/focus.json"
 settle
-grep -qF -- "workspace report-metadata w1 --source herdr-keybars --clear-token focus" "$tmp/herdr.log" ||
+grep -qF -- "workspace report-metadata w1 --source keybars-herdr --clear-token focus" "$tmp/herdr.log" ||
   { echo "FAIL: focus token not cleared" >&2; fail=1; }
 
 # breaks starting and ending are announced, as the timer only shows on the keys

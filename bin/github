@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# herdr-keybars github: each herdr workspace's pull request in the sidebar,
+# keybars-herdr github: each herdr workspace's pull request in the sidebar,
 # and its changes on the keyboard. The sidebar value, e.g.
 #
 #   #412│×│!   PR #412 (d412 = draft), CI failed, changes requested

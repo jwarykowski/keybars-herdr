@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# herdr-keybars: herdr's agents on the keyboard, through keybars Pro's
+# keybars-herdr: herdr's agents on the keyboard, through keybars Pro's
 # keybars-pro command:
 #   number key N  workspace N (as ctrl+alt+N): breathing while its agent is
 #                 blocked on you, held while it's done
@@ -169,7 +169,7 @@ run() {
   local last="" current misses=0 ks focus="" focus_was="" reported=0
   claim watch
   if ! have_keybars; then
-    notify "herdr-keybars needs keybars Pro's keybars-pro command: App settings, Install the command-line tool"
+    notify "keybars-herdr needs keybars Pro's keybars-pro command: App settings, Install the command-line tool"
     rm -f "$state_dir/watch.pid"
     return 1
   fi

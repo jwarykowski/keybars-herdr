@@ -1,4 +1,4 @@
-# herdr-keybars
+# keybars-herdr
 
 A [herdr](https://herdr.dev) plugin that puts your workspaces on the keyboard
 through [keybars Pro](https://keybars.app/pro/): which agent needs you, how
@@ -41,7 +41,7 @@ It replaces herdr-zsa-lights, which needed Keymapp and kontroll.
 ## Install
 
 ```sh
-herdr plugin install jwarykowski/herdr-keybars
+herdr plugin install jwarykowski/keybars-herdr
 ```
 
 The watcher and the pull request reporter start with each herdr session and
@@ -62,15 +62,15 @@ Coming from herdr-gh or herdr-pomodoro: uninstall them, as this does both.
 
 | action | does |
 |---|---|
-| `jwarykowski.herdr-keybars.next-agent` | focus the next blocked agent, else the next done one; repeat to cycle |
-| `jwarykowski.herdr-keybars.setup` | install the GitHub rule packs in keybars Pro |
-| `jwarykowski.herdr-keybars.mcp` | give Claude Code keybars Pro's tools (`keybars-pro mcp`), so an agent can light keys itself; other agents take the same command in their MCP settings |
-| `jwarykowski.herdr-keybars.focus` | keybars Pro's Focus timer start / stop |
-| `jwarykowski.herdr-keybars.focus-start`, `.focus-stop` | start a Focus session, or stop it |
-| `jwarykowski.herdr-keybars.github-refresh` | check pull requests now, rather than within the minute |
-| `jwarykowski.herdr-keybars.toggle` | agent lights off / on |
-| `jwarykowski.herdr-keybars.keyboard` | keybars Pro's lights off / on (its On switch) |
-| `jwarykowski.herdr-keybars.restart` | restart the watcher and the reporter, e.g. after a config change |
+| `jwarykowski.keybars-herdr.next-agent` | focus the next blocked agent, else the next done one; repeat to cycle |
+| `jwarykowski.keybars-herdr.setup` | install the GitHub rule packs in keybars Pro |
+| `jwarykowski.keybars-herdr.mcp` | give Claude Code keybars Pro's tools (`keybars-pro mcp`), so an agent can light keys itself; other agents take the same command in their MCP settings |
+| `jwarykowski.keybars-herdr.focus` | keybars Pro's Focus timer start / stop |
+| `jwarykowski.keybars-herdr.focus-start`, `.focus-stop` | start a Focus session, or stop it |
+| `jwarykowski.keybars-herdr.github-refresh` | check pull requests now, rather than within the minute |
+| `jwarykowski.keybars-herdr.toggle` | agent lights off / on |
+| `jwarykowski.keybars-herdr.keyboard` | keybars Pro's lights off / on (its On switch) |
+| `jwarykowski.keybars-herdr.restart` | restart the watcher and the reporter, e.g. after a config change |
 
 Bind them in herdr's `config.toml`, then point keyboard keys at those chords
 in Oryx (e.g. the top-right key sends `ctrl+alt+a`):
@@ -79,7 +79,7 @@ in Oryx (e.g. the top-right key sends `ctrl+alt+a`):
 [[keys.command]]
 key = "ctrl+alt+a"
 type = "plugin_action"
-command = "jwarykowski.herdr-keybars.next-agent"
+command = "jwarykowski.keybars-herdr.next-agent"
 description = "focus the agent that needs you"
 ```
 
@@ -137,7 +137,7 @@ is only recorded, so a restart sends nothing.
 
 ## Neovim
 
-[keybars.nvim](https://code.warykowski.io/jwarykowski/keybars.nvim) is the
+[keybars-nvim](https://code.warykowski.io/jwarykowski/keybars-nvim) is the
 editor's half: `:KeybarsRun make test` shows a build on the keyboard and opens
 failures in the quickfix list, errors can hold a key, and a statusline
 component shows Focus and typing speed.
@@ -145,7 +145,7 @@ component shows Focus and typing speed.
 ## Configuration
 
 Optional. Put overrides in `config.env` inside the plugin config directory
-(`herdr plugin config-dir jwarykowski.herdr-keybars`), then run the restart
+(`herdr plugin config-dir jwarykowski.keybars-herdr`), then run the restart
 action. See [`config.env.example`](config.env.example): colours, effects, the
 jump key, which keys are workspaces 1–9 (by position, as `keybars-pro light`
 names them; `keybars-pro map` shows your board), whether to send events, and

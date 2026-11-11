@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# herdr-keybars focus: keybars Pro's Focus timer, from herdr. The watcher
+# keybars-herdr focus: keybars Pro's Focus timer, from herdr. The watcher
 # shows it in the sidebar as $focus and says when breaks start and end.
 #
 # usage: focus [toggle]   start it, or stop it if it's running
